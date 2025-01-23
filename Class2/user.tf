@@ -1,8 +1,9 @@
 resource "aws_iam_user" "lb" {
   for_each = toset (["jenny","jisoo","lisa","rose","jenny","lisaa"])
 name = each.value
-  
-} resource "aws_iam_group_membership" "team" {
+}
+
+ resource "aws_iam_group_membership" "team" {
   name = "tf-testing-group-membership"
 
   users = [
